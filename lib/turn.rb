@@ -35,11 +35,10 @@ def turn(board)
   input = gets
   index = input_to_index(input)
   if (valid_move?(board, index))
-    board[index] = "X"
     move(board, index)
-  elsif (!valid_move(board, index))
-    puts "Please enter a valid number from 1-9:"
-    input = gets
+    display_board(board)
+  else
+    puts "That is not a valid choice."
+    turn(board)
   end
-  display_board(board)
 end
